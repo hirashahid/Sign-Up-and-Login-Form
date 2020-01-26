@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML>
+<head>
+    <title style="text-align: center;"> Sign Up and Login Form</title>
+    <link rel = "stylesheet" href = "style.css">
+    <script>
+        function checkform(login){
+            if(login.username.value == ""){
+                alert("Error: Username Is Empty");
+                login.username.focus();
+                return false;
+            }
+            if(login.email.value == ""){
+                alert("Error: Email Is Empty!");
+                login.email.focus();
+                return false;
+            }
+            return true;
+        }
+    
+    
+    </script>
+</head>
+<body>
+    <div name = "login-page" style="width: 360px; padding: 5%; margin: auto; ">
+        <div name = "form" style="background-color: rgb(252, 128, 190); padding: 1%; text-align: center;"> 
+            <form class = "login" method="POST" action="login.php" onsubmit="return checkform(this);"> 
+                <h2  style = "margin: 0 0 15px; padding: 10px;">LOGIN FORM</h2>
+                <p><input  style = "margin: 0 0 10px; padding: 8px;" type="text" name = "username" size="32" placeholder="Username"></p>
+                <p><input  style = "margin: 0 0 10px; padding: 8px;" type="text" name = "email" size="32" placeholder="Email"></p>
+                <button  style = "margin: 0 0 6px; padding: 8px; ">LOGIN</button>
+                <p> <a href="SignUpForm.html" style = "color: blue; margin: 0 0 3px; padding: 3px;">Register</a></p>
+            </form>
+         </div>
+    </div> 
+</body>

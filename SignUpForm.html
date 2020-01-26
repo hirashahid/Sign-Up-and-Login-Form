@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title style="text-align: center;"> Sign Up and Login Form</title>
+        <link rel = "stylesheet" href = "style.css">
+        <script>
+            function checkform(sign_up){
+                if(sign_up.fname.value == ""){
+                    alert("ERROR: First Name is Empty!");
+                    sign_up.fname.focus();
+                    return false;
+                }
+                if(sign_up.lname.value == ""){
+                    alert("ERROR: Last Name is Empty!");
+                    sign_up.lname.focus();
+                    return false;
+                }
+                if(sign_up.username.value == ""){
+                    alert("ERROR: Username is Empty!");
+                    sign_up.username.focus();
+                    return false;
+                }
+                if(sign_up.email.value == ""){
+                    alert("ERROR: Email is Empty!");
+                    sign_up.email.focus();
+                    return false;
+                }
+                if(sign_up.password.value == ""){
+                    alert("ERROR: Password is Empty!");
+                    sign_up.password.focus();
+                    return false;
+                }
+                if(sign_up.pass2.value == ""){
+                    alert("ERROR: Repeat Password is Empty!");
+                    sign_up.pass2.focus();
+                    return false;
+                }
+                if(sign_up.password.value != sign_up.pass2.value){
+                    alert("ERROR: Passwords Don't Match! ");
+                    sign_up.password.focus();
+                    return false;
+                }
+                // username alphanumerical validation
+                var re = /^[\w ]+$/; 
+                if(!re.test(sign_up.username.value)){
+                    alert("ERROR: Username should only be alphanumericals!");
+                    sign_up.username.focus();
+                    return false;
+                }
+                return true;
+            }
+        
+        
+        </script>
+
+    </head>
+    <body>
+        <div name = "login-page" style="width: 360px; padding: 5%; margin: auto; ">
+            <div name = "form" style="background-color: rgb(252, 128, 190); padding: 1%; text-align: center;">   
+                <form name="sign_up" method = "POST" action = "connect.php" onsubmit="return checkform(this);">
+                    <h2  style = "margin: 0 0 15px; padding: 10px;">SIGN UP FORM</h2>
+                    <p><input style = "box-sizing: border-box; margin: 0 0 15px; padding: 10px;" type="text" name = "fname" size="32" placeholder="First Name"></p>
+                    <p><input  style = "margin: 0 0 10px; padding: 8px;" type="text" name = "lname" size="32" placeholder="Last name"></p>
+                    <p><input  style = "margin: 0 0 10px; padding: 8px;" type="text" name = "username" size="32" placeholder="Username"></p>
+                    <p><input  style = "margin: 0 0 10px; padding: 8px;" type="email" name = "email" size="32" placeholder="Email"></p>
+                    <p><input style = "margin: 0 0 10px; padding: 8px;"  type="password" name = "password" size="32" placeholder="Password "></p>
+                    <p><input  style = "margin: 0 0 10px; padding: 8px;" type="password" name = "pass2" size="32" placeholder="Repeat Password "></p>
+                    <input type = "submit" style = "margin: 0 0 6px; padding: 8px; ">
+                   <p> <a href="Login.html" style = "color: blue; margin: 0 0 3px; padding: 3px;">Login</a></p>
+                </form>
+               
+             </div>
+        </div> 
+    </body>
+</html>
+//php
