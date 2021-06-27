@@ -1,7 +1,7 @@
 <h1 align="center">Signup and Login Form</h1>
 <a href="#">
   <div align="center" >
-    <img src="ss.png" width='400' height = '500'/>
+    <img src="ss.png" height = '500'/>
   </div>
 </a>
 
